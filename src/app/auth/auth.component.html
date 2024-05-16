@@ -1,1 +1,15 @@
-<h1>Page d'authentification</h1>
+<div class="login">
+  <p *ngIf="erreur">{{erreur}}</p>
+  <div class="mat-card">
+    <div class="flex-col">
+      <label >Nom d'utilisateur</label>
+      <input type="text" [(ngModel)]="username" >
+    </div>
+    <div class="flex-col">
+      <label >Nom d'utilisateur</label>
+      <input type="text" [(ngModel)]="password">
+    </div>
+    <button (click)="login()" >Se connecter</button>
+  </div>
+
+</div>

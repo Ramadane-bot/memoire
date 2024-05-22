@@ -15,6 +15,7 @@ export class AuthComponent implements OnInit{
   ngOnInit(): void{
 
   }
+
   login(): void{
      if(this.username === "git" && this.password === "git"){
        this.router.navigateByUrl("/home").then(() => this.erreur = undefined);

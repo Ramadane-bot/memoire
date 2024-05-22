@@ -6,18 +6,18 @@ import { AppComponent } from './app.component';
 import {AuthModule} from "./auth/auth.module";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HomeComponent } from './home/home.component';
+import {HomeModule} from "./home/home.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent,
-    HomeComponent
+    NotFoundComponent
   ],
   imports: [
     AuthModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule
   ],
   providers: [
     provideClientHydration(),

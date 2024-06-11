@@ -5,13 +5,26 @@ import {NotFoundComponent} from "./not-found/not-found.component";
 import {HomeComponent} from "./home/home.component";
 
 const routes: Routes = [
+
   {
     path : "auth",
     component: AuthComponent
   },
   {
     path: "home",
-    component: HomeComponent
+    children:[
+      {
+        path: "",
+        loadChildren: ()=> import('./memoire/memoire.module')
+          .then((m)=> m.MemoireModule),
+        pathMatch: "full"
+      }
+    ]
+  },
+  {
+    path : "utilisateurs",
+    loadChildren: ()=> import('./utilisateur/utilisateur.module')
+      .then((m)=> m.UtilisateurModule)
   },
   {
     path : "not-found",
@@ -25,7 +38,6 @@ const routes: Routes = [
   {
     path : "**",
     redirectTo : "/not-found",
-    pathMatch : "full"
   }
 ];
 

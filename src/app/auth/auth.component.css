@@ -17,3 +17,13 @@
   display: flex;
   flex-direction: column;
 }
+
+.p-md{
+  padding: 1em;
+}
+
+mat-card{
+  width: 40%;
+}
+
+

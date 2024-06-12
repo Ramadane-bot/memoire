@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {UtilisateurComponent} from "./utilisateur.component";
-import {ListComponent} from "./list/list.component";
-import {EditComponent} from "./edit/edit.component";
-import * as util from "node:util";
+import {EditComponent} from "./components/edit/edit.component";
+import {ListComponent} from "./components/list/list.component";
+import {PostComponent} from "./post.component";
+
 
 const routes: Routes = [
   {
-    path:'utilisateurs',
-    component: UtilisateurComponent,
+    path: 'post',
     children: [
-
       {
         path: 'edit',
         component: EditComponent
@@ -19,8 +17,9 @@ const routes: Routes = [
         path: 'list',
         component: ListComponent
       }
+
     ]
-  },
+  }
 
 ];
 
@@ -28,4 +27,6 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UtilisateurRoutingModule { }
+export class PostRoutingModule {
+
+}

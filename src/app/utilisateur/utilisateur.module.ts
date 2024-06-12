@@ -9,12 +9,12 @@ import { UtilisateurComponent } from './utilisateur.component';
 
 @NgModule({
   declarations: [
-    ListComponent,
+    UtilisateurComponent,
     EditComponent,
-    UtilisateurComponent
+    ListComponent
   ],
   imports: [
-    CommonModule,
+  CommonModule,
     UtilisateurRoutingModule
   ]
 })

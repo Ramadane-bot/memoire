@@ -3,42 +3,45 @@ import { RouterModule, Routes } from '@angular/router';
 import {AuthComponent} from "./auth/auth.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {HomeComponent} from "./home/home.component";
+import {ForumComponent} from "./forum/forum.component";
 
 const routes: Routes = [
-
   {
-    path : "auth",
+    path: 'auth',
     component: AuthComponent
   },
   {
-    path: "home",
-    children:[
-      {
-        path: "",
-        loadChildren: ()=> import('./memoire/memoire.module')
-          .then((m)=> m.MemoireModule),
-        pathMatch: "full"
-      }
-    ]
-  },
-  {
-    path : "utilisateurs",
-    loadChildren: ()=> import('./utilisateur/utilisateur.module')
-      .then((m)=> m.UtilisateurModule)
-  },
-  {
-    path : "not-found",
+    path: 'not-found',
     component: NotFoundComponent
   },
+
   {
-    path : "",
-    redirectTo : "/auth",
-    pathMatch : "full"
+    path: '',
+    redirectTo: 'auth',
+    pathMatch: 'full'
   },
   {
-    path : "**",
-    redirectTo : "/not-found",
-  }
+    path: 'forum',
+
+    loadChildren: () => import("./forum/forum.module")
+      .then((t) =>t.ForumModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import("./memoire/memoire.module")
+      .then((t)=> t.MemoireModule)
+  },
+  {
+    path: 'utilisateurs',
+    loadChildren: ()=> import("./utilisateur/utilisateur.module")
+      .then((t)=> t.UtilisateurModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+
+  },
+
 ];
 
 @NgModule({

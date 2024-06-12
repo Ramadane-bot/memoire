@@ -8,18 +8,23 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MemoireModule} from "./memoire/memoire.module";
 import {UtilisateurModule} from "./utilisateur/utilisateur.module";
+import {CommonModule} from "@angular/common";
+import {HomeComponent} from "./home/home.component";
+import {ForumModule} from "./forum/forum.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent,
-
+    HomeComponent,
+    NotFoundComponent
 
   ],
   imports: [
-    UtilisateurModule,
-    MemoireModule,
     AuthModule,
+    UtilisateurModule,
+    ForumModule,
+    MemoireModule,
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
   ],

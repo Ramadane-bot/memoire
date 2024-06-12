@@ -9,6 +9,9 @@ import { MemoireComponent } from './memoire.component';
   declarations: [
     MemoireComponent
   ],
+  exports: [
+    MemoireComponent
+  ],
   imports: [
     CommonModule,
     MemoireRoutingModule
